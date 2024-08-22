@@ -43,7 +43,8 @@ def parseLogs(flowLog, tagMap, comboCount, tagCount):
     """
     for line in flowLog:
         flowData = line.strip().split()
-
+        if flowData[0] != "2":
+            continue
         # dstport is at index 6
         dstport = flowData[6]
 
