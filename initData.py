@@ -61,6 +61,9 @@ def parseLogs(flowLog, tagMap, comboCount, tagCount):
 def logOutput(outputFile, comboCount, tagCount):
     """
     Takes output file object and writes data from initialized maps to it
+
+    Pre-condition: output File obj, map of combination counts, map of tag count
+    Post-condition: Data in maps are written to 'output.txt'
     """
     outputFile.write("Tag Counts: \n")
     outputFile.write("Tag,Count \n")
