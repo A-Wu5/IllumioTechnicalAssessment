@@ -31,12 +31,17 @@ This program was tested using different FlowLog files and Lookup table files for
 Edge cases:
 
 1. Empty flowLog file and empty lookup table file:
+
    a. The output file would only contain 'Tag Counts:', the tag formatting, 'Port/Protocol Combination Counts:', and combination formatting. There would be no data in the output file.
 2. Empty table lookup file:
+
    a. Each line in the flow log file would be labeled as untagged
 3. Empty flowlog file:
+
    a. All the tag counts are 0
 4. Flowlog contains version 3 data:
+
    a. The program skips over data that is not version 2
 5. Flow log is not in default formatting:
+
    a. The program outputs an error
