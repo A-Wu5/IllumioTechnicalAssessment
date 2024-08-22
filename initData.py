@@ -1,11 +1,13 @@
-"""
-Pre-condition: Lookup Table file object (opened)
-Post-condition: Reads file object and returns a dictionaries
-                (1) Key: Tuple(dstport, protocol), Value: Tag : String
-                (2) Key: Tuple(dstport, protocol), Value: Count : Integer
-                (3) Key: Tag : String, Value : Count : Integer
-"""
-def initMaps(lookupTable):
+
+def initMaps(lookupTable : str):
+    """
+    Takes an open Lookup-table file descriptor and parses the data into three hashmaps \n
+    Pre-condition: Lookup Table file object (opened)
+    Post-condition: Reads file object and returns a dictionaries
+                    (1) Key: Tuple(dstport, protocol), Value: Tag : String
+                    (2) Key: Tuple(dstport, protocol), Value: Count : Integer
+                    (3) Key: Tag : String, Value : Count : Integer
+    """
     tagMap = dict()
     tagCount = dict()
     comboCount = dict()
@@ -16,9 +18,9 @@ def initMaps(lookupTable):
         if len(mapData) != 3:
             continue
         # Split data into appropriate elements
-        dstport = mapData[0].lower()
-        protocol = mapData[1].lower()
-        tag = mapData[2]
+        dstport = mapData[0]
+        protocol = mapData[1].upper()
+        tag = mapData[2].upper()
 
         # Initialize dictionaries
         tagMap[(dstport, protocol)] = tag
@@ -26,3 +28,4 @@ def initMaps(lookupTable):
         tagCount[tag] = 0
 
     return (tagMap, comboCount, tagCount)
+
