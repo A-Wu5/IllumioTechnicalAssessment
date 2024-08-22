@@ -18,3 +18,9 @@
 - Update 'lookupFile' and 'logFile' on lines 5 and 6 and make sure the paths are set correctly
 - Run the program by going to the location of main.py and typing `python3 main.py` in the terminal
 - The program should generate or update 'output.txt' with the count of matches or output an error message if an error occurred.
+
+## Analysis
+
+The time complexities of all the functions in `initData.py` are all linear O(n), since the functions go through each lines n once and performs O(1) operations on them.
+
+The space complexity is also linear O(m + k), since at most the program stores all of the combination pairs m and tags k once in each program start.
