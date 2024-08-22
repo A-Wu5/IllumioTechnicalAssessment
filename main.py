@@ -1,13 +1,20 @@
 from initData import *
 
 if __name__ == "__main__":
-    # print("Enter flow log file name: ")
-    # fileName = input()
-
-    lookupTable = open("./LookupTables/testLookup.csv", "r")
-    flowLog = open("./FlowLogs/testinput.txt", "r")
+    try:
+        lookupFile = "./LookupTables/testLookup.csv"
+        logFile = "./FlowLogs/testInput.txt"
+        
+        lookupTable = open(lookupFile, "r")
+        flowLog = open(logFile, "r")
     
-    tagMap, comboCount, tagCount = initMaps(lookupTable)
+        print("Files opened successfully")
+        tagMap, comboCount, tagCount = initMaps(lookupTable)
 
-    lookupTable.close()
-    flowLog.close()
+        lookupTable.close()
+        flowLog.close()
+    except Exception as e:
+        print(e)
+
+    
+        
